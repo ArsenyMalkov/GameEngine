@@ -18,23 +18,23 @@ struct Vector3 {
 		this->z = z;
 	}
 
-	__forceinline Vector3& operator+=(double scalar);
-	__forceinline Vector3 operator+(double scalar) const;
-	__forceinline Vector3& operator-=(double scalar);
-	__forceinline Vector3 operator-(double scalar) const;
-	__forceinline Vector3& operator*=(double scalar);
-	__forceinline Vector3 operator*(double scalar) const;
-	__forceinline Vector3& operator/=(double scalar);
-	__forceinline Vector3 operator/(double scalar) const;
+	__forceinline Vector3& operator += (double scalar);
+	__forceinline Vector3  operator +  (double scalar) const;
+	__forceinline Vector3& operator -= (double scalar);
+	__forceinline Vector3  operator -  (double scalar) const;
+	__forceinline Vector3& operator *= (double scalar);
+	__forceinline Vector3  operator *  (double scalar) const;
+	__forceinline Vector3& operator /= (double scalar);
+	__forceinline Vector3  operator /  (double scalar) const;
 
-	__forceinline Vector3& operator+=(const Vector3& vector);
-	__forceinline Vector3 operator+(const Vector3& vector) const;
-	__forceinline Vector3& operator-=(const Vector3& vector);
-	__forceinline Vector3 operator-(const Vector3& vector) const;
-	__forceinline Vector3& operator*=(const Vector3& vector);
-	__forceinline Vector3 operator*(const Vector3& vector) const;
-	__forceinline Vector3& operator/=(const Vector3& vector);
-	__forceinline Vector3 operator/(const Vector3& vector) const;
+	__forceinline Vector3& operator += (const Vector3& vector);
+	__forceinline Vector3  operator +  (const Vector3& vector) const;
+	__forceinline Vector3& operator -= (const Vector3& vector);
+	__forceinline Vector3  operator -  (const Vector3& vector) const;
+	__forceinline Vector3& operator *= (const Vector3& vector);
+	__forceinline Vector3  operator *  (const Vector3& vector) const;
+	__forceinline Vector3& operator /= (const Vector3& vector);
+	__forceinline Vector3  operator /  (const Vector3& vector) const;
 
 	__forceinline double magnitude() const;
 	__forceinline Vector3 normalize() const;
@@ -43,91 +43,91 @@ struct Vector3 {
 	__forceinline Vector3 cross(const Vector3& vector) const;
 };
 
-Vector3& Vector3::operator+=(double scalar) {
+Vector3& Vector3::operator += (double scalar) {
 	x += scalar;
 	y += scalar;
 	z += scalar;
 	return *this;
 }
 
-Vector3 Vector3::operator+(double scalar) const {
+Vector3 Vector3::operator + (double scalar) const {
 	return Vector3(x + scalar, y + scalar, z + scalar);
 }
 
-Vector3& Vector3::operator-=(double scalar) {
+Vector3& Vector3::operator -= (double scalar) {
 	x -= scalar;
 	y -= scalar;
 	z -= scalar;
 	return *this;
 }
 
-Vector3 Vector3::operator-(double scalar) const {
+Vector3 Vector3::operator - (double scalar) const {
 	return Vector3(x - scalar, y - scalar, z - scalar);
 }
 
-Vector3& Vector3::operator*=(double scalar) {
+Vector3& Vector3::operator *= (double scalar) {
 	x *= scalar;
 	y *= scalar;
 	z *= scalar;
 	return *this;
 }
 
-Vector3 Vector3::operator*(double scalar) const {
+Vector3 Vector3::operator * (double scalar) const {
 	return Vector3(x * scalar, y * scalar, z * scalar);
 }
 
-Vector3& Vector3::operator/=(double scalar) {
+Vector3& Vector3::operator /= (double scalar) {
 	x /= scalar;
 	y /= scalar;
 	z /= scalar;
 	return *this;
 }
 
-Vector3 Vector3::operator/(double scalar) const {
+Vector3 Vector3::operator / (double scalar) const {
 	return Vector3(x / scalar, y / scalar, z / scalar);
 }
 
-Vector3& Vector3::operator+=(const Vector3& vector) {
+Vector3& Vector3::operator += (const Vector3& vector) {
 	x += vector.x;
 	y += vector.y;
 	z += vector.z;
 	return *this;
 }
 
-Vector3 Vector3::operator+(const Vector3& vector) const {
+Vector3 Vector3::operator + (const Vector3& vector) const {
 	return Vector3(x + vector.x, y + vector.y, z + vector.z);
 }
 
-Vector3& Vector3::operator-=(const Vector3& vector) {
+Vector3& Vector3::operator -= (const Vector3& vector) {
 	x -= vector.x;
 	y -= vector.y;
 	z -= vector.z;
 	return *this;
 }
 
-Vector3 Vector3::operator-(const Vector3& vector) const {
+Vector3 Vector3::operator - (const Vector3& vector) const {
 	return Vector3(x - vector.x, y - vector.y, z - vector.z);
 }
 
-Vector3& Vector3::operator*=(const Vector3& vector) {
+Vector3& Vector3::operator *= (const Vector3& vector) {
 	x *= vector.x;
 	y *= vector.y;
 	z *= vector.z;
 	return *this;
 }
 
-Vector3 Vector3::operator*(const Vector3& vector) const {
+Vector3 Vector3::operator * (const Vector3& vector) const {
 	return Vector3(x * vector.x, y * vector.y, z * vector.z);
 }
 
-Vector3& Vector3::operator/=(const Vector3& vector) {
+Vector3& Vector3::operator /= (const Vector3& vector) {
 	x /= vector.x;
 	y /= vector.y;
 	z /= vector.z;
 	return *this;
 }
 
-Vector3 Vector3::operator/(const Vector3& vector) const {
+Vector3 Vector3::operator / (const Vector3& vector) const {
 	return Vector3(x / vector.x, y / vector.y, z / vector.z);
 }
 
