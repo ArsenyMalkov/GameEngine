@@ -7,8 +7,6 @@ namespace {
     const double abs_error = 0.0001;
 
     TEST(MathTest, CreateVector) {
-        // EXPECT_EQ(1, 1);
-        // EXPECT_TRUE(true);
         Vector3 vector = Vector3();
         EXPECT_EQ(vector.x, 0);
         EXPECT_EQ(vector.y, 0);
@@ -239,5 +237,43 @@ namespace {
         EXPECT_NEAR(result.x, 0.5699, abs_error);
         EXPECT_NEAR(result.y, -0.8549, abs_error);
         EXPECT_NEAR(result.z, -1.1399, abs_error);
+    }
+
+    TEST(MathTest, Dot) {
+        Vector3 vector = Vector3();
+        Vector3 vector1 = Vector3(0.1, 0.5, 5.5);
+        double result = vector.dot(vector1);
+        EXPECT_EQ(result, 0);
+
+        vector = Vector3(6, -4.2, 52.3);
+        vector1 = Vector3(-4, 1.5, 4.2);
+        result = vector.dot(vector1);
+        EXPECT_NEAR(result, 189.36, abs_error);
+
+        vector = Vector3(2, 3, 4);
+        result = vector1.dot(vector);
+        EXPECT_NEAR(result, 13.3, abs_error);
+    }
+
+    TEST(MathTest, Cross) {
+        Vector3 vector = Vector3();
+        Vector3 vector1 = Vector3(0.1, 0.5, 5.5);
+        Vector3 result = vector.cross(vector1);
+        EXPECT_EQ(result.x, 0);
+        EXPECT_EQ(result.y, 0);
+        EXPECT_EQ(result.z, 0);
+
+        vector = Vector3(6, -4.2, 52.3);
+        vector1 = Vector3(-4, 1.5, 4.2);
+        result = vector.cross(vector1);
+        EXPECT_NEAR(result.x, -96.09, abs_error);
+        EXPECT_NEAR(result.y, -234.4, abs_error);
+        EXPECT_NEAR(result.z, -7.8, abs_error);
+
+        vector = Vector3(2, 3, 4);
+        result = vector1.cross(vector);
+        EXPECT_NEAR(result.x, -6.6, abs_error);
+        EXPECT_NEAR(result.y, 24.4, abs_error);
+        EXPECT_NEAR(result.z, -15, abs_error);
     }
 }
